@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tema Değişkenleri */
+:root {
+    /* Koyu Tema (Varsayılan) */
+    --header-bg: #2e2e2e;
+    --card-bg: #0a0a0a;
+    --background: #0a0a0a;
+    --text-color: #ffffff;
+    --card-info-bar-bg: #0d1117;
+    --card-stats-bg: #0d1117;
+    --card-profile-bg: #0d1117;
+    --card-body-bg: #0d1117;
+    --search-box-bg: #151515;
+    --border-color: #1f2937;
+    --secondary-text: #e0e0e0;
+    --icon-color: #94a3b8;
+
+    /* Landing Sayfası Değişkenleri */
+    --landing-bg: #0a0a0a;
+    --landing-text: #ffffff;
+    --landing-secondary-text: rgba(255, 255, 255, 0.9);
+    --landing-nav-bg: rgba(255, 255, 255, 0.1);
+    --landing-nav-border: rgba(255, 255, 255, 1);
+    --landing-step-bg: rgba(255, 255, 255, 0.05);
+    --landing-step-border: rgba(255, 255, 255, 0.1);
+    --landing-step-text: #ffffff;
+
+    /* Form Elemanları - Koyu Tema */
+    --input-bg: #212121;
+    --input-background: #212121;
+    --text-secondary: #94a3b8;
+    --placeholder-color: #94a3b8;
+    --button-secondary-bg: #2e2e2e;
+    --button-secondary-border: #1f2937;
+    --button-secondary-text: #e0e0e0;
+    --button-secondary-hover-bg: #3e3e3e;
+    --button-secondary-hover-border: #2f3a48;
+
+    /* Badge Renkleri - Koyu Tema */
+    --badge-acik-bg: rgba(16, 185, 129, 0.2);
+    --badge-acik-color: #10b981;
+    --badge-ozel-bg: rgba(88, 166, 255, 0.2);
+    --badge-ozel-color: #58a6ff;
+    --badge-ucretli-bg: rgba(249, 197, 19, 0.2);
+    --badge-ucretli-color: #f9c513;
+    --primary-color: #00de46c9;
+}
+
+/* Açık Tema */
+[data-theme="light"] {
+    --text-color: #0d1117;
+    --header-bg: #ede7e3;
+    --card-bg: #ffffff;
+    --background: #ffffff;
+    --card-info-bar-bg: #ffffff;
+    --card-stats-bg: #ffffff;
+    --card-profile-bg: #ffffff;
+    --card-body-bg: #ffffff;
+    --search-box-bg: #ede7e3;
+    --border-color: #d4d4d4;
+    --secondary-text: #333333;
+    --icon-color: #555555;
+
+    /* Landing Sayfası Değişkenleri - Açık Tema */
+    --landing-bg: #ffffff;
+    --landing-text: #2e2e2e;
+    --landing-secondary-text: rgba(46, 46, 46, 0.9);
+    --landing-nav-bg: rgba(46, 46, 46, 0.1);
+    --landing-nav-border: rgba(46, 46, 46, 0.2);
+    --landing-step-bg: #ffffff;
+    --landing-step-border: rgba(46, 46, 46, 0.1);
+    --landing-step-text: #2e2e2e;
+
+    /* Form Elemanları - Açık Tema */
+    --input-bg: #ffffff;
+    --input-background: #f8fafc;
+    --text-secondary: #888888;
+    --placeholder-color: #888888;
+    --button-secondary-bg: #f0f0f0;
+    --button-secondary-border: #e0e0e0;
+    --button-secondary-text: #333333;
+    --button-secondary-hover-bg: #dde4dd;
+    --button-secondary-hover-border: #d0d0d0;
+
+    /* Badge Renkleri - Açık Tema */
+    --badge-acik-bg: rgba(16, 185, 129, 0.3);
+    --badge-acik-color: #0a8554;
+    --badge-ozel-bg: rgba(88, 166, 255, 0.3);
+    --badge-ozel-color: #0366d6;
+    --badge-ucretli-bg: rgba(249, 197, 19, 0.3);
+    --badge-ucretli-color: #b07d0f;
+}
