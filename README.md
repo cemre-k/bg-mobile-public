@@ -1,176 +1,31 @@
-# BG Mobile App
+# bg-mobile-public — Public snapshot (görünürlük amaçlı)
 
-React Native ile Expo tabanlı bir mobile uygulaması. Bu proje, bir önceki iş yerindeki yarım kalan projeden geliştirilmiş olup, public portföy projesi olarak yayınlanmıştır.
+Bu repository, benim önceki iş yerimde yarım kalan bir mobil uygulama projesinin kamuya açılmış, temizlenmiş bir görünümüdür. Projenin amacı portföy ve görünürlük sağlamaktır — tam, çalışır bir ürün veya paketlenmiş bir proje sunmak değildir.
 
-## 📋 Proje Hakkında
+Önemli noktalar
 
-Bu repository, uygulamaya baştan sona bakabilecek geliştiriciler için açık kaynak olarak paylaşılmaktadır. Proje, aşağıdaki başlıca özellikleri içermektedir:
+- Bu repo tamamlanmamış (yarım kalmış) bir çalışmanın halka açık olarak paylaşılan hâlidir.
+- Orijinal çalışmaya ait gizli endpoint'ler, API anahtarları ve iç altyapı referansları temizlenmiş/sanitize edilmiştir.
+- Repoyu klonlayıp çalıştırmak veya üretimde kullanmak için gerekli olan tam yapılandırma, sunucu altyapısı ve veri bulunmamaktadır.
+- Bu repoya ait herhangi bir üretim verisi veya canlı anahtar içermez; yine de hassas veri araması yapılmış ve temizlenmiştir.
 
-- **Mobile-First Design**: Hem iOS hem de Android'te çalışan native uygulama
-- **Modern Stack**: React Native + Expo + TypeScript + Tailwind CSS
-- **File-Based Routing**: Expo Router kullanarak yapılandırılmış dosya tabanlı routing
-- **Type Safety**: TypeScript ile tam tip desteği
+Ne beklemelisiniz
 
-## 🔐 Güvenlik Notu
+- Kaynak kodun bir kısmı (UI, komponentler, yardımcı fonksiyonlar vb.) burada örnek amaçlı bırakılmıştır.
+- Dokümantasyon, kurulum veya destek sağlanmamaktadır — bu repo eğitim/örnek amaçlı değil, sadece görünürlük içindir.
 
-> **Önemli**: Bu repository portföy amaçlı olarak hazırlanmıştır. Orijinal iş yeri git geçmişi ve dahili altyapı referansları kasıtlı olarak kaldırılmıştır. API endpoint'leri ve API anahtarları sanitize edilerek kaldırılmıştır.
+Lisans ve katkı
 
-Eğer bu repoyu inceliyorsanız, lütfen mevcut içeriği temiz bir public snapshot olarak değerlendirin.
+- Bu repoda lisans bilgisi bulunmuyorsa, herhangi bir yeniden kullanım veya ticari kullanım için önce yazılı izin alınması gerekir.
+- Doğrudan katkılar kabul edilmemektedir; sorun/geri bildirim için Issues açabilirsiniz.
 
-## 🛠 Tech Stack
+Güvenlik & Sorumluluk Reddi
 
-| Teknoloji | Sürüm | Amaç |
-|-----------|-------|------|
-| **React** | 19.1.0 | UI framework |
-| **React Native** | 0.81.5 | Native mobile development |
-| **Expo** | ~54.0.32 | Development platform & build tooling |
-| **TypeScript** | ~5.9.2 | Type safety |
-| **Tailwind CSS** | 3.4.19 | Styling (NativeWind via) |
-| **Expo Router** | ~6.0.22 | File-based routing |
-| **React Navigation** | 7.x | Navigation layer |
+Bu repo, orijinal işverenin mülkiyetindeki aktif bir ürünün yerine geçmez. Burada bulunan kod veya yapılandırma eksik, hatalı veya güncel olmayabilir. Herhangi bir kullanım veya uygulama riski tamamen sizin sorumluluğunuzdadır.
 
-## 📁 Proje Yapısı
+İletişim
 
-```
-bg-mobile-public/
-├── app/                      # Expo Router kullanarak dosya tabanlı routing
-├── components/               # Reusable React Native bileşenleri
-├── context/                  # React Context state yönetimi
-├── utils/                    # Yardımcı fonksiyonlar ve utilities
-├── package.json              # Proje bağımlılıkları
-├── tailwind.config.js        # Tailwind CSS konfigürasyonu
-├── tsconfig.json             # TypeScript konfigürasyonu
-├── eas.json                  # Expo Application Services yapılandırması
-├── app.json                  # Expo app konfigürasyonu
-└── .env.example              # Environment variables şablonu
-```
+- Sahip: cemre-k (https://github.com/cemre-k)
+- Sorular/geri bildirim: https://github.com/cemre-k/bg-mobile-public/issues
 
-## 🚀 Başlangıç
-
-### Ön Koşullar
-
-- **Node.js** (v16 veya üstü)
-- **npm** (v7 veya üstü)
-- Geliştirme için Expo CLI: `npm install -g expo-cli`
-
-### Kurulum Adımları
-
-1. **Repository'yi klonlayın**
-   ```bash
-   git clone https://github.com/cemre-k/bg-mobile-public.git
-   cd bg-mobile-public
-   ```
-
-2. **Bağımlılıkları yükleyin**
-   ```bash
-   npm install
-   ```
-
-3. **Environment variables'ı ayarlayın**
-   
-   `.env.local` dosyasını `.env.example` şablonundan oluşturun:
-   ```bash
-   cp .env.example .env.local
-   ```
-   
-   Ardından `.env.local` dosyasını düzenleyerek backend API URL'ini ekleyin:
-   ```env
-   EXPO_PUBLIC_API_BASE_URL=https://api.example.com
-   ```
-   
-   > **Not**: Bu değer login, logout, chat ve şifre sıfırlama istekleri için kullanılır.
-
-4. **Uygulamayı başlatın**
-   ```bash
-   npm start
-   ```
-   
-   Terminal çıktısında şu seçenekleri göreceksiniz:
-   - **[i]** iOS Simulator
-   - **[a]** Android Emulator
-   - **[w]** Web browser
-   - **[j]** Expo Go uygulaması (cihazınızda)
-
-### Geliştirme Komutları
-
-```bash
-# iOS Simulator'da çalıştır
-npm run ios
-
-# Android Emulator'da çalıştır
-npm run android
-
-# Web browser'da çalıştır
-npm run web
-
-# Projeyi sıfırla (starter code'u app-example'a taşı)
-npm run reset-project
-
-# ESLint ile kodu kontrol et
-npm run lint
-```
-
-## 🏗 Proje Mimarisi
-
-### State Yönetimi
-- **React Context API**: `context/` dizininde yer alan context'ler ile state yönetimi
-
-### Bileşen Yapısı
-- **Reusable Components**: `components/` dizininde tekrar kullanılabilir UI bileşenleri
-- **File-based Routing**: `app/` dizini Expo Router tarafından otomatik olarak route'lara dönüştürülür
-
-### Styling
-- **Tailwind CSS + NativeWind**: Yazı tipi yardımcı sınıfları (utility classes) ile styling
-- Native ve web'de tutarlı stil uygulaması
-
-### API İntegrasyonu
-Uygulamadaki API çağrıları `.env.local` dosyasında tanımlanan `EXPO_PUBLIC_API_BASE_URL` değerini kullanır.
-
-## 📱 Supported Platforms
-
-- ✅ iOS (iOS 13+)
-- ✅ Android (Android 5+)
-- ✅ Web (Expo Web)
-
-## 🔄 Güncelleme ve Bakım
-
-Proje bağımlılıklarını güncellemek için:
-
-```bash
-npm update
-```
-
-Veya belirli bir paketi güncellemek için:
-```bash
-npm update <package-name>
-```
-
-## 📚 Kaynaklar
-
-- [Expo Resmi Belgeleri](https://docs.expo.dev/)
-- [React Native Dokümantasyonu](https://reactnative.dev/)
-- [Expo Router Rehberi](https://docs.expo.dev/router/introduction/)
-- [TypeScript Rehberi](https://www.typescriptlang.org/docs/)
-- [Tailwind CSS Dokümantasyonu](https://tailwindcss.com/docs)
-
-## 🤝 Katkı
-
-Bu proje portföy amaçlı bir snapshot olduğu için, doğrudan katkı kabul etmemektedir. Ancak:
-- Bug raporlaması için [Issues](https://github.com/cemre-k/bg-mobile-public/issues) açabilirsiniz
-- Geri bildirim ve öneriler için tartışma bölümünü kullanabilirsiniz
-
-## 📝 Lisans
-
-Bu proje açık kaynak olmakla birlikte, lisans bilgisi `LICENSE` dosyasında yer almaktadır.
-
-## 💬 İletişim
-
-Proje hakkında sorularınız için:
-- GitHub Issues: [Issues](https://github.com/cemre-k/bg-mobile-public/issues)
-- Profil: [@cemre-k](https://github.com/cemre-k)
-
----
-
-**Son Güncelleme**: June 2026
-
-Happy Coding! 🎉
+Son güncelleme: June 2026
