@@ -1,68 +1,176 @@
-# Welcome to your Expo app 👋
+# BG Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+React Native ile Expo tabanlı bir mobile uygulaması. Bu proje, bir önceki iş yerindeki yarım kalan projeden geliştirilmiş olup, public portföy projesi olarak yayınlanmıştır.
 
-## Public Release Note
+## 📋 Proje Hakkında
 
-This repository was prepared for public visibility as a portfolio project.
+Bu repository, uygulamaya baştan sona bakabilecek geliştiriciler için açık kaynak olarak paylaşılmaktadır. Proje, aşağıdaki başlıca özellikleri içermektedir:
 
-The original workplace-specific git history was intentionally not published, and the working tree was sanitized before release to remove internal endpoints, private infrastructure references, and branded assets that were not meant to be shared publicly.
+- **Mobile-First Design**: Hem iOS hem de Android'te çalışan native uygulama
+- **Modern Stack**: React Native + Expo + TypeScript + Tailwind CSS
+- **File-Based Routing**: Expo Router kullanarak yapılandırılmış dosya tabanlı routing
+- **Type Safety**: TypeScript ile tam tip desteği
 
-If you are reviewing this repo, treat the current contents as a clean public snapshot rather than the original internal project history.
+## 🔐 Güvenlik Notu
 
-## Environment
+> **Önemli**: Bu repository portföy amaçlı olarak hazırlanmıştır. Orijinal iş yeri git geçmişi ve dahili altyapı referansları kasıtlı olarak kaldırılmıştır. API endpoint'leri ve API anahtarları sanitize edilerek kaldırılmıştır.
 
-Create a local `.env.local` file based on `.env.example` and set your backend URL:
+Eğer bu repoyu inceliyorsanız, lütfen mevcut içeriği temiz bir public snapshot olarak değerlendirin.
 
-```bash
-EXPO_PUBLIC_API_BASE_URL=https://api.example.com
+## 🛠 Tech Stack
+
+| Teknoloji | Sürüm | Amaç |
+|-----------|-------|------|
+| **React** | 19.1.0 | UI framework |
+| **React Native** | 0.81.5 | Native mobile development |
+| **Expo** | ~54.0.32 | Development platform & build tooling |
+| **TypeScript** | ~5.9.2 | Type safety |
+| **Tailwind CSS** | 3.4.19 | Styling (NativeWind via) |
+| **Expo Router** | ~6.0.22 | File-based routing |
+| **React Navigation** | 7.x | Navigation layer |
+
+## 📁 Proje Yapısı
+
+```
+bg-mobile-public/
+├── app/                      # Expo Router kullanarak dosya tabanlı routing
+├── components/               # Reusable React Native bileşenleri
+├── context/                  # React Context state yönetimi
+├── utils/                    # Yardımcı fonksiyonlar ve utilities
+├── package.json              # Proje bağımlılıkları
+├── tailwind.config.js        # Tailwind CSS konfigürasyonu
+├── tsconfig.json             # TypeScript konfigürasyonu
+├── eas.json                  # Expo Application Services yapılandırması
+├── app.json                  # Expo app konfigürasyonu
+└── .env.example              # Environment variables şablonu
 ```
 
-The app reads this value for login, logout, chat, and password reset requests.
+## 🚀 Başlangıç
 
-## Get started
+### Ön Koşullar
 
-1. Install dependencies
+- **Node.js** (v16 veya üstü)
+- **npm** (v7 veya üstü)
+- Geliştirme için Expo CLI: `npm install -g expo-cli`
 
-    ```bash
-    npm install
-    ```
+### Kurulum Adımları
 
-2. Start the app
+1. **Repository'yi klonlayın**
+   ```bash
+   git clone https://github.com/cemre-k/bg-mobile-public.git
+   cd bg-mobile-public
+   ```
 
-    ```bash
-    npx expo start
-    ```
+2. **Bağımlılıkları yükleyin**
+   ```bash
+   npm install
+   ```
 
-In the output, you'll find options to open the app in a
+3. **Environment variables'ı ayarlayın**
+   
+   `.env.local` dosyasını `.env.example` şablonundan oluşturun:
+   ```bash
+   cp .env.example .env.local
+   ```
+   
+   Ardından `.env.local` dosyasını düzenleyerek backend API URL'ini ekleyin:
+   ```env
+   EXPO_PUBLIC_API_BASE_URL=https://api.example.com
+   ```
+   
+   > **Not**: Bu değer login, logout, chat ve şifre sıfırlama istekleri için kullanılır.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+4. **Uygulamayı başlatın**
+   ```bash
+   npm start
+   ```
+   
+   Terminal çıktısında şu seçenekleri göreceksiniz:
+   - **[i]** iOS Simulator
+   - **[a]** Android Emulator
+   - **[w]** Web browser
+   - **[j]** Expo Go uygulaması (cihazınızda)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+### Geliştirme Komutları
 
 ```bash
+# iOS Simulator'da çalıştır
+npm run ios
+
+# Android Emulator'da çalıştır
+npm run android
+
+# Web browser'da çalıştır
+npm run web
+
+# Projeyi sıfırla (starter code'u app-example'a taşı)
 npm run reset-project
+
+# ESLint ile kodu kontrol et
+npm run lint
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🏗 Proje Mimarisi
 
-## Learn more
+### State Yönetimi
+- **React Context API**: `context/` dizininde yer alan context'ler ile state yönetimi
 
-To learn more about developing your project with Expo, look at the following resources:
+### Bileşen Yapısı
+- **Reusable Components**: `components/` dizininde tekrar kullanılabilir UI bileşenleri
+- **File-based Routing**: `app/` dizini Expo Router tarafından otomatik olarak route'lara dönüştürülür
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Styling
+- **Tailwind CSS + NativeWind**: Yazı tipi yardımcı sınıfları (utility classes) ile styling
+- Native ve web'de tutarlı stil uygulaması
 
-## Join the community
+### API İntegrasyonu
+Uygulamadaki API çağrıları `.env.local` dosyasında tanımlanan `EXPO_PUBLIC_API_BASE_URL` değerini kullanır.
 
-Join our community of developers creating universal apps.
+## 📱 Supported Platforms
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- ✅ iOS (iOS 13+)
+- ✅ Android (Android 5+)
+- ✅ Web (Expo Web)
+
+## 🔄 Güncelleme ve Bakım
+
+Proje bağımlılıklarını güncellemek için:
+
+```bash
+npm update
+```
+
+Veya belirli bir paketi güncellemek için:
+```bash
+npm update <package-name>
+```
+
+## 📚 Kaynaklar
+
+- [Expo Resmi Belgeleri](https://docs.expo.dev/)
+- [React Native Dokümantasyonu](https://reactnative.dev/)
+- [Expo Router Rehberi](https://docs.expo.dev/router/introduction/)
+- [TypeScript Rehberi](https://www.typescriptlang.org/docs/)
+- [Tailwind CSS Dokümantasyonu](https://tailwindcss.com/docs)
+
+## 🤝 Katkı
+
+Bu proje portföy amaçlı bir snapshot olduğu için, doğrudan katkı kabul etmemektedir. Ancak:
+- Bug raporlaması için [Issues](https://github.com/cemre-k/bg-mobile-public/issues) açabilirsiniz
+- Geri bildirim ve öneriler için tartışma bölümünü kullanabilirsiniz
+
+## 📝 Lisans
+
+Bu proje açık kaynak olmakla birlikte, lisans bilgisi `LICENSE` dosyasında yer almaktadır.
+
+## 💬 İletişim
+
+Proje hakkında sorularınız için:
+- GitHub Issues: [Issues](https://github.com/cemre-k/bg-mobile-public/issues)
+- Profil: [@cemre-k](https://github.com/cemre-k)
+
+---
+
+**Son Güncelleme**: June 2026
+
+Happy Coding! 🎉
