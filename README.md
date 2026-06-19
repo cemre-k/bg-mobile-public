@@ -1,4 +1,4 @@
-fpll# bg-mobile-public — Public snapshot (görünürlük amaçlı)
+# bg-mobile-public — Public snapshot (görünürlük amaçlı)
 
 Bu repository, benim önceki iş yerimde yarım kalan bir mobil uygulama projesinin kamuya açılmış, temizlenmiş bir görünümüdür. Projenin amacı portföy ve görünürlük sağlamaktır — tam, çalışır bir ürün veya paketlenmiş bir proje sunmak değildir.
 
